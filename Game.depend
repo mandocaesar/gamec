@@ -1,0 +1,38 @@
+# depslib dependency file v1.0
+1523529356 source:e:\project\game-cpp\game\main.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<time.h>
+	<string.h>
+	"gametype.h"
+	"menu.h"
+
+1523529825 source:e:\project\game-cpp\game\gametype.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<time.h>
+	<string.h>
+	"gametype.h"
+	"guess_game.h"
+
+1523528991 e:\project\game-cpp\game\gametype.h
+
+1523529338 e:\project\game-cpp\game\menu.h
+
+1523529342 source:e:\project\game-cpp\game\menu.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<time.h>
+	<string.h>
+	"menu.h"
+
+1523531076 e:\project\game-cpp\game\guess_game.h
+
+1523540878 source:e:\project\game-cpp\game\guess_game.c
+	<stdio.h>
+	<stdlib.h>
+	"guess_game.h"
+
