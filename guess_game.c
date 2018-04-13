@@ -61,7 +61,6 @@ void playGuessGame(int round){
 
     if(_round < 5){
         printf("Press any key to start next round");
-
         getchar();
         system("@cls||clear");
 
@@ -72,13 +71,11 @@ void playGuessGame(int round){
         if(_point > 50){
             printf("Press any key to start next Level");
             getchar();
-            system("@cls||clear");
             initGuessGame2(1);
         }else{
             printf("Sorry you don't have enough point to proceed to next level, thanks for playing!");
             getchar();
-            system("@cls||clear");
-            GameMenu();
+            Start();
         }
     }
 };
@@ -149,5 +146,5 @@ void saveResult(){
     sprintf(buf, "%s\t %d \t %d", _id,_lvl,_point);
     printf("writing: [%s]", buf);
 
-    createFile("GuessGame.txt", "%s", &buf);
+    createFile("GuessGame.txt",buf);
 };

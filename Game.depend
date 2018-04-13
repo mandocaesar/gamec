@@ -32,15 +32,16 @@
 
 1523625687 e:\project\game-cpp\game\guess_game.h
 
-1523628972 source:e:\project\game-cpp\game\guess_game.c
+1523634623 source:e:\project\game-cpp\game\guess_game.c
 	<stdio.h>
 	<stdlib.h>
 	"guess_game.h"
 	"utility.h"
+	"menu.h"
 
 1523625211 e:\project\game-cpp\game\utility.h
 
-1523629099 source:e:\project\game-cpp\game\utility.c
+1523634785 source:e:\project\game-cpp\game\utility.c
 	<stdio.h>
 	"utility.h"
 
