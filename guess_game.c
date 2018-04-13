@@ -1,21 +1,27 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "guess_game.h"
+#include "utility.h"
+#include "menu.h"
 
 char *_id;
-int _secret1, _secret2, _round, _point;
+int _secret1, _secret2, _round, _point, _lvl;
 
 void initGuessGame(char *ID){
     _id = ID;
     _secret1 = generateSecret();
     _point = 0;
+    _lvl = 1;
 
-    playGuessGame2(1);
+    playGuessGame(1);
 };
 
-void initGuessGame2(char *ID){
-    initGuessGame(ID);
+void initGuessGame2(){
+    _secret1 = generateSecret();
     _secret2 = generateSecret();
+    _lvl = 2;
+
+    playGuessGame2(1);
 };
 
 int generateSecret(){
@@ -63,6 +69,17 @@ void playGuessGame(int round){
         playGuessGame(_round + 1);
     }else{
         saveResult();
+        if(_point > 50){
+            printf("Press any key to start next Level");
+            getchar();
+            system("@cls||clear");
+            initGuessGame2(1);
+        }else{
+            printf("Sorry you don't have enough point to proceed to next level, thanks for playing!");
+            getchar();
+            system("@cls||clear");
+            GameMenu();
+        }
     }
 };
 
@@ -89,7 +106,7 @@ void playGuessGame2(int round){
             printf("|| Wrong guess, try again [%d] first number:", _numberTry);
             scanf("%d", &_answer1);
 
-            printf("|| second number:", _numberTry);
+            printf("|| second number:");
             scanf("%d", &_answer2);
 
             _numberTry++;
@@ -120,10 +137,17 @@ void playGuessGame2(int round){
 
         playGuessGame2(_round + 1);
     }else{
+        printf("\nCongratulations your final point is %d \n", _point);
+        printf("saving result...");
         saveResult();
+        getchar();
     }
 };
 
 void saveResult(){
-    printf("UserID %s got %d", _id, _point);
+    char buf[200];
+    sprintf(buf, "%s\t %d \t %d", _id,_lvl,_point);
+    printf("writing: [%s]", buf);
+
+    createFile("GuessGame.txt", "%s", &buf);
 };

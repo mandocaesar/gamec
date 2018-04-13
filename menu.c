@@ -4,10 +4,11 @@
 #include <time.h>
 #include <string.h>
 #include "menu.h"
+#include "gametype.h"
 
 void Start()
 {
-    int answer;
+    int _answer;
     char* _menu[8] = {
         "============= Main Screen Menu =========",
         " 1- Play a new game",
@@ -25,8 +26,8 @@ void Start()
     };
 
     printf("Please enter your choice:");
-    scanf("%d", &answer);
-    switch(answer){
+    scanf("%d", &_answer);
+    switch(_answer){
         case 1 :
 
             GameMenu();
@@ -57,10 +58,10 @@ void GameMenu()
         printf("%s%s\n","||",_menu[i]);
     };
 
-    int answer;
+    int _answer;
     printf("Your choice:");
-    answer = _getch();
-    switch(answer)
+    _answer = _getch();
+    switch(_answer)
     {
         case 49:
             system("@cls||clear");
