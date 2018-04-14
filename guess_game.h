@@ -7,5 +7,6 @@ int generateSecret();
 void playGuessGame();
 void playGuessGame2();
 void saveResult();
+void readResult();
 
 #endif // GUESS_GAME_H_INCLUDED

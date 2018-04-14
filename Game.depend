@@ -8,7 +8,7 @@
 	"gametype.h"
 	"menu.h"
 
-1523529825 source:e:\project\game-cpp\game\gametype.c
+1523708215 source:e:\project\game-cpp\game\gametype.c
 	<stdio.h>
 	<stdlib.h>
 	<conio.h>
@@ -17,11 +17,11 @@
 	"gametype.h"
 	"guess_game.h"
 
-1523528991 e:\project\game-cpp\game\gametype.h
+1523706786 e:\project\game-cpp\game\gametype.h
 
 1523529338 e:\project\game-cpp\game\menu.h
 
-1523629229 source:e:\project\game-cpp\game\menu.c
+1523706857 source:e:\project\game-cpp\game\menu.c
 	<stdio.h>
 	<stdlib.h>
 	<conio.h>
@@ -30,11 +30,13 @@
 	"menu.h"
 	"gametype.h"
 
-1523625687 e:\project\game-cpp\game\guess_game.h
+1523704274 e:\project\game-cpp\game\guess_game.h
 
-1523634623 source:e:\project\game-cpp\game\guess_game.c
+1523708899 source:e:\project\game-cpp\game\guess_game.c
 	<stdio.h>
 	<stdlib.h>
+	<unistd.h>
+	<string.h>
 	"guess_game.h"
 	"utility.h"
 	"menu.h"

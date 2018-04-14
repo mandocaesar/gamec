@@ -8,8 +8,12 @@
 
 void GuessGame()
 {
-    initGuessGame("test-id");
+    initGuessGame();
+}
 
+void ViesGuessGameScore(){
+    readResult();
+    _getch();
 }
 
 void QAGame()
