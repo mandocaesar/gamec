@@ -5,14 +5,21 @@
 #include <string.h>
 #include "gametype.h"
 #include "guess_game.h"
+#include "qa_game.h"
 
 void GuessGame()
 {
-    initGuessGame("test-id");
+    initGuessGame();
+}
 
+void ViesGuessGameScore(){
+    readResult();
+    viewQAresult();
+    Start();
 }
 
 void QAGame()
 {
-    printf("QA game");
+    startGame();
+    _getch();
 }

@@ -5,6 +5,7 @@
 #include <string.h>
 #include "menu.h"
 #include "gametype.h"
+#include "utility.h"
 
 void Start()
 {
@@ -26,19 +27,31 @@ void Start()
     };
 
     printf("Please enter your choice:");
-    scanf("%d", &_answer);
+    _answer = _getch();
     switch(_answer){
-        case 1 :
-
+        case 49 :
             GameMenu();
             break;
-        case 6 :
+        case 50:
+            ViesGuessGameScore();
+            break;
+        case 51:
+
+            break;
+        case 52:
+            DeveloperInfo();
+            break;
+        case 53:
+            ProgramInfo();
+            break;
+        case 54 :
             system("@cls||clear");
             printf("Thank you for using ICS103 Game Program, Good luck");
             break;
         default:
             printf("Invalid Menu");
             Start();
+            break;
     }
 }
 
