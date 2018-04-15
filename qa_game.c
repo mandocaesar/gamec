@@ -10,7 +10,6 @@ struct QuestionModel{
     int answer;
 };
 
-
 struct QAModel{
     char player[50];
     int point;
@@ -20,8 +19,7 @@ struct QuestionModel _questions[5];
 int _point, _questionNumber;
 struct QAModel _qamodel;
 
-
-//To Initialize questions
+//Initialize questions
 void createQuestions(){
 
     FILE *outfile;
@@ -139,18 +137,20 @@ void viewQAresult(){
         exit(1);
     }
     system("@cls||clear");
+
     printf("||================= QA Game Score================\n");
     printf("||Player name \t || Point\n");
     printf("||==================================================\n");
+
     while(fread(&input, sizeof(struct QAModel), 1, infile)){
         printf ("||%s \t ||%d\n", input.player, input.point);
     }
+
     fclose(infile);
     printf("||==================================================\n");
     printf("Press anything to continue..");
      _getch();
      system("@cls||clear");
-   // Start();
 
 };
 
