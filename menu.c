@@ -34,6 +34,9 @@ void Start()
         case 50:
             ViesGuessGameScore();
             break;
+        case 51:
+
+            break;
         case 54 :
             system("@cls||clear");
             printf("Thank you for using ICS103 Game Program, Good luck");

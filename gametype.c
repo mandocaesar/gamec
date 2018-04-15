@@ -5,6 +5,7 @@
 #include <string.h>
 #include "gametype.h"
 #include "guess_game.h"
+#include "qa_game.h"
 
 void GuessGame()
 {
@@ -13,10 +14,12 @@ void GuessGame()
 
 void ViesGuessGameScore(){
     readResult();
-    _getch();
+    viewQAresult();
+    Start();
 }
 
 void QAGame()
 {
-    printf("QA game");
+    startGame();
+    _getch();
 }

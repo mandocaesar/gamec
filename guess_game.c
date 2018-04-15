@@ -3,7 +3,6 @@
 #include <unistd.h>
 #include <string.h>
 #include "guess_game.h"
-#include "utility.h"
 #include "menu.h"
 
 
@@ -18,14 +17,9 @@ struct GuessModel _models[10];
 struct GuessModel _model;
 
 void initGuessGame(){
-    //readResult();
-    //char _username[50];
     printf("Enter your username:");
     scanf("%s", _model.player);
 
-    printf("Lest platy %s \n", _model.player);
-
-   // _id = _username;
     _secret1 = generateSecret();
     _model.point = 0;
     _model.lvl = 1;
@@ -92,7 +86,7 @@ void playGuessGame(int round){
         }else{
             printf("\nCongratulations your final point is %d \n", _model.point);
             printf("\nSorry you don't have enough point to proceed to next level, thanks for playing!\n");
-            getchar();
+            _getch();
             Start();
         }
     }
@@ -155,7 +149,8 @@ void playGuessGame2(int round){
         printf("\nCongratulations your final point is %d \n", _model.point);
         printf("saving result...");
         saveResult();
-        getchar();
+        _getch();
+        Start();
     }
 };
 
@@ -168,8 +163,6 @@ void saveResult(){
     }else{
         outfile = fopen ("GuessScore.txt", "a");
     }
-
-    _models[0] = _model;
 
     fwrite(&_model, sizeof(struct GuessModel),1, outfile);
     fclose(outfile);
@@ -187,10 +180,18 @@ void readResult(){
         fclose(infile);
         exit(1);
     }
-     // read file contents till end of file
+    system("@cls||clear");
+    printf("||================= Guess Game Score================\n");
+    printf("||Player name \t || Level \t || Point \t\n");
+    printf("||==================================================\n");
     while(fread(&input, sizeof(struct GuessModel), 1, infile)){
-        printf ("%s \t %d \t %d \n", input.player,input.lvl, input.point);
+        printf ("||%s \t ||%d \t  \t ||%d \n", input.player,input.lvl, input.point);
     }
     fclose(infile);
-    //return 0;
+    printf("||==================================================\n");
+    printf("Press anything to continue..");
+     _getch();
+     system("@cls||clear");
+   // Start();
+
 };
