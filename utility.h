@@ -1,9 +1,7 @@
 #ifndef UTILITY_H_INCLUDED
 #define UTILITY_H_INCLUDED
 
-void createFile();
-int checkFile();
-void saveQAGame();
-void saveGuessGame();
+void DeveloperInfo();
+void ProgramInfo();
 
 #endif // UTILITY_H_INCLUDED

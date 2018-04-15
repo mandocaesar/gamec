@@ -52,9 +52,8 @@ void readQuestions(){
 
     if(infile == NULL)
     {
-        fprintf(stderr, "\nError opening file\n");
-        fclose(infile);
-        exit(1);
+        createQuestions();
+        readQuestions();
     }
     int i = 0;
     while(fread(&input, sizeof(struct QuestionModel), 1, infile)){
